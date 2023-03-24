@@ -1,28 +1,28 @@
 @extends('layouts.master')
 @section('content')
     <main>
-        <div class="wrapper">   
-           
-            <div class="shop-wrapper">               
+        <div class="wrapper">
+
+            <div class="shop-wrapper">
                 <!-- левая панель -->
                 <aside class="left-side">
                     <div class="category">
                         <div class="list-box">
                             <div class="title-box open">
                                 <p>Категории</p>
-                                <div class="button-plus-minus">                                    
-                                </div>                               
+                                <div class="button-plus-minus">
+                                </div>
                             </div>
                             <div class="list-link open">
                                 <nav>
                                     @foreach ($categories as $category)
-                                        <li><a href="#">{{ $category->name }} </a></li> 
+                                        <li><a href="#">{{ $category->name }} </a></li>
                                     @endforeach
 
                                     <!--<li><a href="#">Мягкие игрушки</a></li>
-                                    <li><a href="#">Брелки</a></li>
-                                    <li><a href="#">Магниты</a></li>
-                                    <li><a href="#">Подушки</a></li> -->
+                                            <li><a href="#">Брелки</a></li>
+                                            <li><a href="#">Магниты</a></li>
+                                            <li><a href="#">Подушки</a></li> -->
                                 </nav>
                             </div>
                         </div>
@@ -30,19 +30,19 @@
                         <div class="list-box">
                             <div class="title-box open">
                                 <p>Коллекции</p>
-                                <div class="button-plus-minus">                                    
-                                </div>                               
+                                <div class="button-plus-minus">
+                                </div>
                             </div>
                             <div class="list-link open">
                                 <nav>
                                     @foreach ($collections as $collection)
-                                        <li><a href="#">{{ $collection->name }} </a></li> 
+                                        <li><a href="#">{{ $collection->name }} </a></li>
                                     @endforeach
                                     <!-- <li><a href="#">Овечки Jolly Mäh</a></li>
-                                    <li><a href="#">Единорог Theodor и его друзья</a></li>
-                                    <li><a href="#">Лесные жители</a></li>
-                                    <li><a href="#">Дикие обитатели</a></li>
-                                    <li><a href="#">Веселая ферма</a></li> -->
+                                            <li><a href="#">Единорог Theodor и его друзья</a></li>
+                                            <li><a href="#">Лесные жители</a></li>
+                                            <li><a href="#">Дикие обитатели</a></li>
+                                            <li><a href="#">Веселая ферма</a></li> -->
                                 </nav>
                             </div>
                         </div>
@@ -52,39 +52,39 @@
                         <div class="list-box">
                             <div class="title-box open">
                                 <p>Фильтр</p>
-                                <div class="button-plus-minus">                                    
-                                </div>                               
+                                <div class="button-plus-minus">
+                                </div>
                             </div>
                             <div class="list-link open">
                                 <div class="left-filter-title">
-                                    <p>Категория или коллекция</p>                                                                   
+                                    <p>Категория или коллекция</p>
                                 </div>
-                                <form class="left-form-filter" method="get"  action="">
+                                <form class="left-form-filter" method="get" action="">
                                     <li>
                                         <input class="" type="checkbox" id="id_sheep" name="sheep">
                                         <label class="" for="id_sheep">Овечки Jolly Mäh</label>
-                                    </li>  
+                                    </li>
                                     <li>
                                         <input class="" type="checkbox" id="id_unicorn" name="unicorn">
                                         <label class="" for="id_unicorn">Единорог Theodor и его друзья</label>
-                                    </li> 
+                                    </li>
                                     <li>
                                         <input class="" type="checkbox" id="id_forest" name="forest">
                                         <label class="" for="id_forest">Лесные жители</label>
-                                    </li> 
+                                    </li>
                                     <li>
                                         <input class="" type="checkbox" id="id_wild" name="wild">
                                         <label class="" for="id_wild">Дикие обитатели</label>
-                                    </li> 
+                                    </li>
                                     <li>
                                         <input class="" type="checkbox" id="id_farm" name="farm">
                                         <label class="" for="id_farm">Веселая ферма</label>
-                                    </li>                                      
-                                <!-- </form> -->
-                                <!-- левая панель: Фильтр по цене -->
+                                    </li>
+                                    <!-- </form> -->
+                                    <!-- левая панель: Фильтр по цене -->
                                     <div class="filter-price">
                                         <div class="left-filter-title">
-                                            <p>Цена</p>                                                                   
+                                            <p>Цена</p>
                                         </div>
                                         <div class="price-input">
                                             <div class="field">
@@ -101,56 +101,83 @@
                                             <div class="progress"></div>
                                         </div>
                                         <div class="range-input">
-                                            <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
-                                            <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
+                                            <input type="range" class="range-min" min="0" max="10000"
+                                                value="2500" step="100">
+                                            <input type="range" class="range-max" min="0" max="10000"
+                                                value="7500" step="100">
                                         </div>
                                     </div>
-                                    <div  class="filter-buttons-container">
+                                    <div class="filter-buttons-container">
                                         <button type="submit" class="apply-filter">Применить</button>
                                         <button type="button" class="reset-filter">Сбросить</button>
                                     </div>
                                 </form>
-                            </div>                            
-                        </div>                        
+                            </div>
+                        </div>
                     </div>
                 </aside>
-                <section class="right-side"> <!-- Правая галерея товаров -->
+                <section class="right-side">
+                    <!-- Правая галерея товаров -->
                     <!-- Главный слайдер -->
-                   <div class="slider-carousel-wrapper">
+                    <div class="slider-carousel-wrapper">
                         <div class="slider-carousel">
                             <div class="slider-wrap">
                                 <a href="#">
-                                    <img class="slider-img" src="images/NICI/slider/slider1.jpg" alt="" /> 
-                                </a>
-                            </div> 
-                            <div class="slider-wrap">
-                                <a href="#">                    
-                                    <img class="slider-img" src="images/NICI/slider/slider2.jpg" alt="" />   
+                                    <img class="slider-img" src="images/NICI/slider/slider1.jpg" alt="" />
                                 </a>
                             </div>
-                            <div class="slider-wrap"> 
-                                <a href="#">                          
+                            <div class="slider-wrap">
+                                <a href="#">
+                                    <img class="slider-img" src="images/NICI/slider/slider2.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="slider-wrap">
+                                <a href="#">
                                     <img class="slider-img" src="images/NICI/slider/slider3.jpg" alt="" />
-                                </a> 
-                            </div>     
-                            <div class="slider-wrap"> 
-                                <a href="#">                          
+                                </a>
+                            </div>
+                            <div class="slider-wrap">
+                                <a href="#">
                                     <img class="slider-img" src="images/NICI/slider/slider4.png" alt="" />
-                                </a> 
-                            </div>                           
+                                </a>
+                            </div>
                         </div>
                         <button class="slider-button-left"></button>
                         <button class="slider-button-right"></button>
-                    </div>    
-                   
-                    <!--Здесь была Сортировка галереи товаров-->             
+                    </div>
 
-                   <!--  <ul class="shop_gallery"> здесь была Галерея товаров-->
-                   @include('includes.product_gallery', $products)                 
-                  
-                </section> 
-            </div> 
+                    <!--Здесь была Сортировка галереи товаров-->
+
+                    <!--  <ul class="shop_gallery"> здесь была Галерея товаров-->
+                    <!--Сортировка галереи товаров-->
+                @section('custom_js')
+                    @include('ajax.sort')
+                @endsection
+
+                <div class="sorting-line-divider">
+                    <div class="sort-wrapper">
+                        <form action="/sort" method="get" class="sort-form">
+                            <label for="sort">Сортировать по:</label>
+                            <select name="sort" id="sort" class="sort-field">
+                                <option value="title|asc">Названию</option>
+                                <option value="price|desc">Уменьшению цены</option>
+                                <option value="price|asc">Увеличению цены</option>
+                            </select>
+                            <!-- <button type="submit" name="" value="" class="sort-submit">
+            <img class="search-image" src="images/search-icon.svg" alt="Go">
+        </button>  -->
+                        </form>
+                    </div>
+                </div>
+
+                <!--  <ul class="shop_gallery"> Галерея товаров-->
+                <ul id="imgBlock" class="layout_four_column gallerys">
+                    @foreach ($products as $product)
+                        @include('includes.product_card', $product)
+                    @endforeach
+                </ul>
+            </section>
         </div>
-    </main>   
-@endsection  
-   
+    </div>
+</main>
+@endsection

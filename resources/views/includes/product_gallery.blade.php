@@ -1,12 +1,14 @@
  <!--Сортировка галереи товаров-->
- @section('custom_js')
- @endsection
- <div class="sorting-line-divider">
+@section('custom_js')
+    @include('ajax.sort')
+@endsection
+
+<div class="sorting-line-divider">
     <div class="sort-wrapper">
         <form action="/sort" method="get" class="sort-form">
             <label for="sort">Сортировать по:</label>
             <select name="sort" id="sort" class="sort-field">
-                <option value="name|asc">Названию</option>
+                <option value="title|asc">Названию</option>
                 <option value="price|desc">Уменьшению цены</option>
                 <option value="price|asc">Увеличению цены</option>                                
             </select>
@@ -18,6 +20,4 @@
 </div>
 
 <!--  <ul class="shop_gallery"> Галерея товаров-->
-<ul id="imgBlock" class="layout_four_column" id="product_gallery">
-    @include('ajax.product_card', $products)
-</ul>
+@include('ajax.product_card', $products)

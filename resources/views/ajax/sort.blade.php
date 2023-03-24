@@ -11,9 +11,22 @@
                     sort: sort.val()
                 },
                 success: function (data) {
-                    jQuery('#product_gallery').html(data);
+                    jQuery('.gallerys').html(data);
+                },
+                error: function (data) {
+                    alert(data);
                 }
             });
+            // console.log(sort.value);
+            // fetch("{{ route('index') }}/" + new URLSearchParams({
+            //     sort: sort.value
+            // }))
+            // .then((response) => {
+            //     console.log(response.json());
+            // })
+            // .catch((error) => {
+            //     console.log(error);
+            // });
         });
     });
 </script>
