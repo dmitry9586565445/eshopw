@@ -146,7 +146,7 @@
                     <!--Здесь была Сортировка галереи товаров-->             
 
                    <!--  <ul class="shop_gallery"> здесь была Галерея товаров-->
-                   @include('includes.product_gallery')                 
+                   @include('includes.product_gallery', $products)                 
                   
                 </section> 
             </div> 

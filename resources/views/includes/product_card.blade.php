@@ -10,14 +10,21 @@
     </a>    
     <a href="">{{ $product->collection->name }}</a>
     <div class="price-product">
-        <p class="initial-price-product">
-            <span class="initial-price-product-amount">67.08</span>
-            <span class="initial-price-product-currency"> р.</span>
-        </p>
-        <p class="final-price-product">
-            <span class="final-price-product-amount">53.12</span>
-            <span class="final-price-product-currency"> р.</span>
-        </p>
+        @if ($product->issetDiscount())
+            <p class="initial-price-product">
+                <span class="initial-price-product-amount">{{ $product->price }}</span>
+                <span class="initial-price-product-currency"> р.</span>
+            </p>
+            <p class="final-price-product">
+                <span class="final-price-product-amount">{{ $product->getPriceWithDiscount() }}</span>
+                <span class="final-price-product-currency"> р.</span>
+            </p>
+        @else
+            <p class="final-price-product">
+                <span class="final-price-product-amount">{{ $product->price }}</span>
+                <span class="final-price-product-currency"> р.</span>
+            </p>
+        @endif
     </div>
     <form name="gallery-form" method="post" action="" class="gallery-form">
         <button type="submit" class="img_block__button add-cart" data-id="NICI1111">В корзину</button>
