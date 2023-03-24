@@ -20,7 +20,6 @@ class IndexController extends Controller
 
         if ($request->ajax())
         {
-            Debugbar::info($request->sort);
             $sort = explode('|', $request->sort);
             $products = Product::orderBy(
                 in_array($sort[0], ['title', 'price']) ? $sort[0] : 'title',
